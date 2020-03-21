@@ -1,0 +1,51 @@
+html {
+	font-size: 15px;
+}
+body {
+	background-color: #222;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	
+}
+
+h1 {
+	
+	color: #333;
+	font-family: helvetica;
+	margin:200px 0;
+	padding:0;
+	font-size: 150px;
+	letter-spacing: -5px;/* 字体间隙 */
+	position: relative;
+}
+
+h1::after {
+	content: 'Welcome!';
+	color:transparent;/* 透明 */
+	position: absolute;
+	top: 0;
+	left:0;
+	-webkit-clip-path: ellipse(100px 100px at 50% 50%);
+	clip-path: ellipse(100px 100px at 0% 50%);
+	animation: spotlight 5s infinite;
+	background-image:url(../img/1.jpg);
+	background-size: 100%;
+	background-position: center center;
+	-webkit-background-clip: text;
+	background-clip: text;
+}
+
+@keyframes spotlight{
+	0%{
+		clip-path: ellipse(100px 100px at 0% 50%);
+	}
+	50%{
+		clip-path: ellipse(100px 100px at 100% 50%);
+
+	}
+	100%{
+		clip-path: ellipse(100px 100px at 0% 50%);
+
+	}
+}
